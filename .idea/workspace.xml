@@ -45,7 +45,31 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="569d0b7b-aa02-447a-8f64-135c1081143a" name="Default Changelist" comment="" />
+    <list default="true" id="569d0b7b-aa02-447a-8f64-135c1081143a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/httpServer/src/handler/HandlerStack.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpServer/src/handler/HandlerStack.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpServer/src/session/HttpSession.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpServer/src/session/HttpSession.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpServer/src/session/HttpsSession.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpServer/src/session/HttpsSession.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpServer/src/session/launcher/HttpSessionLauncher.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpServer/src/session/launcher/HttpSessionLauncher.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpServer/src/session/launcher/HttpsSessionLauncher.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/httpServer/src/session/launcher/HttpsSessionLauncher.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/c++Backend.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Build.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpServer/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpServer/include/mabiphmo/httpServer/construction/IAppBuilder.h" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/include/mabiphmo/httpServer/construction/IAppBuilder.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpServer/include/mabiphmo/httpServer/handler/HandlerResult.h" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/include/mabiphmo/httpServer/handler/HandlerResult.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpServer/src/construction/AppBuilder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/src/construction/AppBuilder.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpServer/src/construction/AppBuilder.h" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/src/construction/AppBuilder.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpServer/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpServer/src/session/Session.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpServer/src/session/Session.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mabiphmoConfig.cmake.in" beforeDir="false" afterPath="$PROJECT_DIR$/mabiphmoConfig.cmake.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portServer/include/mabiphmo/portServer/construction/IAppBuilder.h" beforeDir="false" afterPath="$PROJECT_DIR$/portServer/include/mabiphmo/portServer/construction/IAppBuilder.h" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +80,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1gy3PmEnlyxAzWoOPtkEVQ3XpgI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -69,11 +93,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../libuService" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="Boost.Test.httpServerTests">
+  <component name="RunManager" selected="CMake Application.httpServer">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="httpServerTests" type="CMakeBoostTestRunConfigurationType" factoryName="Boost Test" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mabiphmo" TARGET_NAME="httpServerTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mabiphmo" RUN_TARGET_NAME="httpServerTests" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -96,11 +125,6 @@
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="httpServer" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mabiphmo" TARGET_NAME="httpServer" CONFIG_NAME="Debug">
@@ -159,6 +183,9 @@
       <workItem from="1599149688158" duration="581000" />
       <workItem from="1599162830634" duration="244000" />
       <workItem from="1599163737816" duration="1465000" />
+      <workItem from="1599408847578" duration="662000" />
+      <workItem from="1599470295198" duration="13483000" />
+      <workItem from="1599489596317" duration="1436000" />
     </task>
     <task id="LOCAL-00001" summary="Added Boost Include dirs as dependency to iocServer">
       <created>1599091964929</created>
@@ -198,6 +225,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../../.." />
+    </ignored-roots>
     <MESSAGE value="Added Boost Include dirs as dependency to iocServer" />
     <option name="LAST_COMMIT_MESSAGE" value="Added Boost Include dirs as dependency to iocServer" />
   </component>
@@ -210,30 +240,30 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="100" y="100" width="1166" height="532" key="DiffContextDialog/0.0.1366.732@0.0.1366.732" timestamp="1599150299268" />
-    <state x="471" y="124" key="FileChooserDialogImpl" timestamp="1599078499157">
+    <state x="471" y="124" key="FileChooserDialogImpl" timestamp="1599409309461">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="471" y="124" key="FileChooserDialogImpl/0.0.1366.732@0.0.1366.732" timestamp="1599078499157" />
-    <state width="1320" height="172" key="GridCell.Tab.0.bottom" timestamp="1599086473008">
+    <state x="471" y="124" key="FileChooserDialogImpl/0.0.1366.732@0.0.1366.732" timestamp="1599409309461" />
+    <state width="1320" height="172" key="GridCell.Tab.0.bottom" timestamp="1599409514597">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.0.bottom/0.0.1366.732@0.0.1366.732" timestamp="1599086473008" />
-    <state width="1320" height="172" key="GridCell.Tab.0.center" timestamp="1599086473007">
+    <state width="1320" height="172" key="GridCell.Tab.0.bottom/0.0.1366.732@0.0.1366.732" timestamp="1599409514597" />
+    <state width="1320" height="172" key="GridCell.Tab.0.center" timestamp="1599409514596">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.0.center/0.0.1366.732@0.0.1366.732" timestamp="1599086473007" />
-    <state width="1320" height="172" key="GridCell.Tab.0.left" timestamp="1599086473007">
+    <state width="1320" height="172" key="GridCell.Tab.0.center/0.0.1366.732@0.0.1366.732" timestamp="1599409514596" />
+    <state width="1320" height="172" key="GridCell.Tab.0.left" timestamp="1599409514595">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.0.left/0.0.1366.732@0.0.1366.732" timestamp="1599086473007" />
-    <state width="1320" height="172" key="GridCell.Tab.0.right" timestamp="1599086473008">
+    <state width="1320" height="172" key="GridCell.Tab.0.left/0.0.1366.732@0.0.1366.732" timestamp="1599409514595" />
+    <state width="1320" height="172" key="GridCell.Tab.0.right" timestamp="1599409514597">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state width="1320" height="172" key="GridCell.Tab.0.right/0.0.1366.732@0.0.1366.732" timestamp="1599086473008" />
-    <state x="172" y="1" key="SettingsEditor" timestamp="1599085644505">
+    <state width="1320" height="172" key="GridCell.Tab.0.right/0.0.1366.732@0.0.1366.732" timestamp="1599409514597" />
+    <state x="172" y="1" key="SettingsEditor" timestamp="1599408887461">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="172" y="1" key="SettingsEditor/0.0.1366.732@0.0.1366.732" timestamp="1599085644505" />
+    <state x="172" y="1" key="SettingsEditor/0.0.1366.732@0.0.1366.732" timestamp="1599408887461" />
     <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1599091967211">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
@@ -242,5 +272,9 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="456" y="280" width="443" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.732@0.0.1366.732" timestamp="1599150225924" />
+    <state x="377" y="0" width="621" height="732" key="find.popup" timestamp="1599470600229">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="377" y="0" width="621" height="732" key="find.popup/0.0.1366.732@0.0.1366.732" timestamp="1599470600229" />
   </component>
 </project>

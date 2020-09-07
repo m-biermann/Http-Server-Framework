@@ -10,6 +10,7 @@ env:
 
 jobs:
   build-boost:
+    continue-on-error: true
     runs-on: ubuntu-latest
     env:
       Boost_Version_DOT: 1.74.0
@@ -25,47 +26,35 @@ jobs:
         key: Boost-${{ env.Boost_Version }}
         path: ${{runner.workspace}}/boost_out
 
-    - name: Boost Installed
+    - name: Boost already Installed
       if: steps.cache.outputs.cache-hit == 'true'
-      run: echo "steps.cache.outputs.cache-hit ${{steps.cache.outputs.cache-hit}}"
-
-    - name: Cached files
-      if: steps.cache.outputs.cache-hit == 'true'
-      shell: bash
-      run: |
-        ls -laR ${{runner.workspace}}/boost_out
+      run: echo "steps.cache.outputs.cache-hit ${{steps.cache.outputs.cache-hit}}"; exit 1
 
     - name: Create Boost build dir
-      if: steps.cache.outputs.cache-hit != 'true'
       working-directory: ${{runner.workspace}}
       run: mkdir -p boost
 
     - name: Download Boost
-      if: steps.cache.outputs.cache-hit != 'true'
       working-directory: ${{runner.workspace}}/boost
       shell: bash
       run: "([ -f boost_${{ env.Boost_Version }}.tar.gz ] && echo 'Skipped [done already]') || wget https://dl.bintray.com/boostorg/release/${{ env.Boost_Version_DOT }}/source/boost_${{ env.Boost_Version }}.tar.gz"
 
     - name: Extract Boost
-      if: steps.cache.outputs.cache-hit != 'true'
       working-directory: ${{runner.workspace}}/boost
       shell: bash
       run: "([ -d boost_${{ env.Boost_Version }} ] && echo 'Skipped [done already]') || tar xzvf boost_${{ env.Boost_Version }}.tar.gz"
 
     - name: Bootstrap Boost
-      if: steps.cache.outputs.cache-hit != 'true'
       working-directory: ${{runner.workspace}}/boost/boost_${{ env.Boost_Version }}
       shell: bash
       run: "([ -f b2 ] && echo 'Skipped [done already]') || ./bootstrap.sh --prefix=${{runner.workspace}}/boost_out"
 
     - name: Build Boost
-      if: steps.cache.outputs.cache-hit != 'true'
       working-directory: ${{runner.workspace}}/boost/boost_${{ env.Boost_Version }}
       shell: bash
       run: "([ -d stage ] && echo 'Skipped [done already]') || ./b2"
 
     - name: Install boost
-      if: steps.cache.outputs.cache-hit != 'true'
       working-directory: ${{runner.workspace}}/boost/boost_${{ env.Boost_Version }}
       shell: bash
       run: "([ -f /usr/local/lib/libboost_atomic.so.${{ env.Boost_Version_DOT }} ] && echo 'Skipped [done already]') || ./b2 install"
@@ -91,22 +80,14 @@ jobs:
     
     - name: Boost not found!
       if: steps.cache.outputs.cache-hit != 'true'
-      run: echo "steps.cache.outputs.cache-hit ${{steps.cache.outputs.cache-hit}}"
-
-    - name: Cached files
-      if: steps.cache.outputs.cache-hit == 'true'
-      shell: bash
-      run: |
-        ls -laR ${{runner.workspace}}/boost_out
+      run: echo "steps.cache.outputs.cache-hit ${{steps.cache.outputs.cache-hit}}"; exit 1
 
     - name: Create Build Environment
-      if: steps.cache.outputs.cache-hit == 'true'
       # Some projects don't allow in-source building, so create a separate build directory
       # We'll use this as our working directory for all subsequent commands
       run: cmake -E make_directory ${{runner.workspace}}/build
 
     - name: Configure CMake
-      if: steps.cache.outputs.cache-hit == 'true'
       # Use a bash shell so we can use the same syntax for environment variable
       # access regardless of the host operating system
       shell: bash
@@ -120,14 +101,12 @@ jobs:
       run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE
 
     - name: Build
-      if: steps.cache.outputs.cache-hit == 'true'
       working-directory: ${{runner.workspace}}/build
       shell: bash
       # Execute the build.  You can specify a specific target with "--target <NAME>"
       run: cmake --build . --config $BUILD_TYPE --target all -- -j 2
       
     - name: Test
-      if: steps.cache.outputs.cache-hit == 'true'
       working-directory: ${{runner.workspace}}/build
       env:
         BOOST_TEST_REPORT_LEVEL: detailed
@@ -137,13 +116,11 @@ jobs:
       run: ctest -C $BUILD_TYPE
 
     - name: Install
-      if: steps.cache.outputs.cache-hit == 'true'
       working-directory: ${{runner.workspace}}/build
       shell: bash
       run: cmake --build . --config $BUILD_TYPE --target install -- -j 1
 
     - name: Upload Artifact
-      if: steps.cache.outputs.cache-hit == 'true'
       uses: actions/upload-artifact@v2
       with:
         name: Libs
