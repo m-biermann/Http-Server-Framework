@@ -2,6 +2,15 @@ name: Build and create Artifact
 
 on:
   workflow_dispatch:
+    inputs:
+      Build-Boost-WIN:
+        description: 'Build boost even if found in cache (Windows)'
+        required: false
+        default: 'false'
+      Build-Boost-UBU:
+        description: 'Build boost even if found in cache (Ubuntu)'
+        required: false
+        default: 'false'
   push:
 
 env:
@@ -19,9 +28,11 @@ jobs:
           - os: windows-latest
             path-delimiter: \
             script-file-type: bat
+            build_boost_input: Build-Boost-WIN
           - os: ubuntu-latest
             path-delimiter: /
             script-file-type: sh
+            build_boost_input: Build-Boost-UBU
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -40,7 +51,7 @@ jobs:
       run: echo "steps.cache.outputs.cache-hit ${{steps.cache.outputs.cache-hit}}"
 
     - name: Create Boost build dir
-      if: steps.cache.outputs.cache-hit != 'true'
+      if: steps.cache.outputs.cache-hit != 'true' || ${{ github.event.inputs.${{ matrix.build_boost_input }} }} == 'true'
       working-directory: ${{runner.workspace}}
       run: mkdir -p boost
 
