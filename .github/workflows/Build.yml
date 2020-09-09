@@ -28,23 +28,31 @@ jobs:
           - os: windows-latest
             path-delimiter: \
             script-file-type: bat
-            boost-out-location: C:\Boost
           - os: ubuntu-latest
             path-delimiter: /
             script-file-type: sh
-            boost-out-location: ${{runner.workspace}}/boost_out
     runs-on: ${{ matrix.os }}
 
     steps:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Set path vars
+      id: vars
+      shell: bash
+      run: |
+        if [${{matrix.os}} = "windows-latest"]
+          then echo "::set-output name=BOOST_DIR::C:\Boost"
+        elif [${{matrix.os}} = "ubuntu-latest"]
+          then echo "::set-output name=BOOST_DIR::${{runner.workspace}}/boost_out"
+        fi
+
     - name: Cache
       uses: actions/cache@v2.1.1
       id: cache
       with:
         key: Boost-${{ env.Boost_Version }}-${{ matrix.os }}
-        path: ${{ matrix.boost-out-location }}
+        path: ${{ steps.vars.outputs.BOOST_DIR }}
 
     - name: Boost already Installed
       if: steps.cache.outputs.cache-hit == 'true'
@@ -76,7 +84,7 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true' || (github.event.inputs.Build-Boost-WIN == 'true' && matrix.os == 'windows-latest') || (github.event.inputs.Build-Boost-UBU == 'true' && matrix.os == 'ubuntu-latest')
       working-directory: ${{runner.workspace}}${{ matrix.path-delimiter }}boost${{ matrix.path-delimiter }}boost_${{ env.Boost_Version }}
       shell: bash
-      run: "([ -f b2 ] && echo 'Skipped [done already]') || ./bootstrap.${{ matrix.script-file-type }} --prefix=${{ matrix.boost-out-location }}"
+      run: "([ -f b2 ] && echo 'Skipped [done already]') || ./bootstrap.${{ matrix.script-file-type }} --prefix=${{ steps.vars.outputs.BOOST_DIR }}"
 
     - name: Build Boost
       if: steps.cache.outputs.cache-hit != 'true' || (github.event.inputs.Build-Boost-WIN == 'true' && matrix.os == 'windows-latest') || (github.event.inputs.Build-Boost-UBU == 'true' && matrix.os == 'ubuntu-latest')
@@ -103,23 +111,29 @@ jobs:
         include:
           - os: windows-latest
             path-delimiter: \
-            script-file-type: bat
-            boost-out-location: C:\Boost
           - os: ubuntu-latest
             path-delimiter: /
-            script-file-type: sh
-            boost-out-location: ~/boost_out
 
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+
+    - name: Set path vars
+      id: vars
+      shell: bash
+      run: |
+        if [${{matrix.os}} = "windows-latest"]
+          then echo "::set-output name=BOOST_DIR::C:\Boost"
+        elif [${{matrix.os}} = "ubuntu-latest"]
+          then echo "::set-output name=BOOST_DIR::${{runner.workspace}}/boost_out"
+        fi
       
     - name: Boost Cache
       uses: actions/cache@v2.1.1
       id: cache
       with:
         key: Boost-${{ env.Boost_Version }}-${{ matrix.os }}
-        path: ${{ matrix.boost-out-location }}
+        path: ${{ steps.vars.outputs.BOOST_DIR }}
     
     - name: Boost not found!
       if: steps.cache.outputs.cache-hit != 'true'
@@ -137,7 +151,7 @@ jobs:
       working-directory: ${{runner.workspace}}${{ matrix.path-delimiter }}build
       env:
         CMAKE_INSTALL_PREFIX: ${{runner.workspace}}${{ matrix.path-delimiter }}build_output
-        BOOST_ROOT: ${{ matrix.boost-out-location }}
+        BOOST_ROOT: ${{ steps.vars.outputs.BOOST_DIR }}
         Boost_DEBUG: ON
       # Note the current convention is to use the -S and -B options here to specify source 
       # and build directories, but this is only available with CMake 3.13 and higher.  
