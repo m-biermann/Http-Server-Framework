@@ -28,11 +28,9 @@ jobs:
           - os: windows-latest
             path-delimiter: \
             script-file-type: bat
-            build_boost_input: Build-Boost-WIN
           - os: ubuntu-latest
             path-delimiter: /
             script-file-type: sh
-            build_boost_input: Build-Boost-UBU
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -51,9 +49,14 @@ jobs:
       run: echo "steps.cache.outputs.cache-hit ${{steps.cache.outputs.cache-hit}}"
 
     - name: Create Boost build dir
-      if: steps.cache.outputs.cache-hit != 'true' || github.event.inputs.${{ matrix.build_boost_input }} == 'true'
+      if: steps.cache.outputs.cache-hit != 'true' || (github.event.inputs.Build-Boost-WIN == 'true' && matrix.os == 'windows-latest') || (github.event.inputs.Build-Boost-UBU == 'true' && matrix.os == 'ubuntu-latest')
       working-directory: ${{runner.workspace}}
-      run: mkdir -p boost
+      run: |
+        echo "steps.cache.outputs.cache-hit ${{steps.cache.outputs.cache-hit}}"
+        echo "matrix.os ${{matrix.os}}"
+        echo "github.event.inputs.Build-Boost-WIN ${{github.event.inputs.Build-Boost-WIN}}"
+        echo "github.event.inputs.Build-Boost-UBU ${{github.event.inputs.Build-Boost-UBU}}"
+        mkdir -p boost
 
     - name: Download Boost
       if: steps.cache.outputs.cache-hit != 'true'
