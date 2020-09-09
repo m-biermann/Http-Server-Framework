@@ -126,10 +126,14 @@ jobs:
       id: vars
       shell: bash
       run: |
-        if [ ${{matrix.os}} = "windows-latest" ]
-          then echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
+        if [ ${{matrix.os}} = "windows-latest" ] then
+          echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
+          echo "::set-output name=GCC_PATH::$(where gcc)"
+          echo "::set-output name=G++_PATH::$(where g++)"
         elif [ ${{matrix.os}} = "ubuntu-latest" ]
           then echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
+          echo "::set-output name=GCC_PATH::$(which gcc)"
+          echo "::set-output name=G++_PATH::$(which g++)"
         fi
       
     - name: Boost Cache
