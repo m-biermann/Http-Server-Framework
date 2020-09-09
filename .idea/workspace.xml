@@ -46,8 +46,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="569d0b7b-aa02-447a-8f64-135c1081143a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/Build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Build.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +166,7 @@
       <workItem from="1599470295198" duration="13483000" />
       <workItem from="1599489596317" duration="5856000" />
       <workItem from="1599643690034" duration="585000" />
-      <workItem from="1599644527309" duration="5315000" />
+      <workItem from="1599644527309" duration="6085000" />
     </task>
     <task id="LOCAL-00001" summary="Added Boost Include dirs as dependency to iocServer">
       <created>1599091964929</created>
@@ -231,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599653898800</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updated build-boost job to not continue-on-error">
+      <created>1599654902138</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1599654902138</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,17 +281,18 @@
     <MESSAGE value="Moved Boost_Version env vars to workflow env instead of job env" />
     <MESSAGE value="Updated curl flags to follow HTTP 30x Moved" />
     <MESSAGE value="Updated build-boost job to not fail when boost is found" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated build-boost job to not fail when boost is found" />
+    <MESSAGE value="Updated build-boost job to not continue-on-error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated build-boost job to not continue-on-error" />
   </component>
   <component name="WindowStateProjectService">
     <state x="147" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599084961122">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="147" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.732@0.0.1366.732" timestamp="1599084961122" />
-    <state x="100" y="100" width="1166" height="532" key="DiffContextDialog" timestamp="1599654870914">
+    <state x="100" y="100" width="1166" height="532" key="DiffContextDialog" timestamp="1599654929323">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="100" y="100" width="1166" height="532" key="DiffContextDialog/0.0.1366.732@0.0.1366.732" timestamp="1599654870914" />
+    <state x="100" y="100" width="1166" height="532" key="DiffContextDialog/0.0.1366.732@0.0.1366.732" timestamp="1599654929323" />
     <state x="471" y="124" width="424" height="483" key="FileChooserDialogImpl" timestamp="1599650063799">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
@@ -309,10 +317,10 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="172" y="1" key="SettingsEditor/0.0.1366.732@0.0.1366.732" timestamp="1599408887461" />
-    <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1599654870345">
+    <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1599656348900">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2/0.0.1366.732@0.0.1366.732" timestamp="1599654870345" />
+    <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2/0.0.1366.732@0.0.1366.732" timestamp="1599656348900" />
     <state x="456" y="280" width="443" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599150225924">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
