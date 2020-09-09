@@ -80,13 +80,13 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true' || (github.event.inputs.Build-Boost-WIN == 'true' && matrix.os == 'windows-latest') || (github.event.inputs.Build-Boost-UBU == 'true' && matrix.os == 'ubuntu-latest')
       working-directory: ${{runner.workspace}}${{ matrix.path-delimiter }}boost${{ matrix.path-delimiter }}boost_${{ env.Boost_Version }}
       shell: bash
-      run: "([ -d stage ] && echo 'Skipped [done already]') || ./b2"
+      run: "([ -d stage ] && echo 'Skipped [done already]') || ./b2 --prefix=${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
 
     - name: Install boost
       if: steps.cache.outputs.cache-hit != 'true' || (github.event.inputs.Build-Boost-WIN == 'true' && matrix.os == 'windows-latest') || (github.event.inputs.Build-Boost-UBU == 'true' && matrix.os == 'ubuntu-latest')
       working-directory: ${{runner.workspace}}${{ matrix.path-delimiter }}boost${{ matrix.path-delimiter }}boost_${{ env.Boost_Version }}
       shell: bash
-      run: "./b2 install"
+      run: "./b2 --prefix=${{runner.workspace}}${{ matrix.path-delimiter }}boost_out install"
 
   build-libs:
     needs: build-boost
