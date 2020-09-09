@@ -30,33 +30,39 @@ jobs:
 
     - name: Boost already Installed
       if: steps.cache.outputs.cache-hit == 'true'
-      run: echo "steps.cache.outputs.cache-hit ${{steps.cache.outputs.cache-hit}}"; exit 1
+      run: echo "steps.cache.outputs.cache-hit ${{steps.cache.outputs.cache-hit}}"
 
     - name: Create Boost build dir
+      if: steps.cache.outputs.cache-hit != 'true'
       working-directory: ${{runner.workspace}}
       run: mkdir -p boost
 
     - name: Download Boost
+      if: steps.cache.outputs.cache-hit != 'true'
       working-directory: ${{runner.workspace}}/boost
       shell: bash
       run: "([ -f boost_${{ env.Boost_Version }}.tar.gz ] && echo 'Skipped [done already]') || curl -LO https://dl.bintray.com/boostorg/release/${{ env.Boost_Version_DOT }}/source/boost_${{ env.Boost_Version }}.tar.gz"
 
     - name: Extract Boost
+      if: steps.cache.outputs.cache-hit != 'true'
       working-directory: ${{runner.workspace}}/boost
       shell: bash
       run: "([ -d boost_${{ env.Boost_Version }} ] && echo 'Skipped [done already]') || tar xzvf boost_${{ env.Boost_Version }}.tar.gz"
 
     - name: Bootstrap Boost
+      if: steps.cache.outputs.cache-hit != 'true'
       working-directory: ${{runner.workspace}}/boost/boost_${{ env.Boost_Version }}
       shell: bash
       run: "([ -f b2 ] && echo 'Skipped [done already]') || ./bootstrap.sh --prefix=${{runner.workspace}}/boost_out"
 
     - name: Build Boost
+      if: steps.cache.outputs.cache-hit != 'true'
       working-directory: ${{runner.workspace}}/boost/boost_${{ env.Boost_Version }}
       shell: bash
       run: "([ -d stage ] && echo 'Skipped [done already]') || ./b2"
 
     - name: Install boost
+      if: steps.cache.outputs.cache-hit != 'true'
       working-directory: ${{runner.workspace}}/boost/boost_${{ env.Boost_Version }}
       shell: bash
       run: "([ -f /usr/local/lib/libboost_atomic.so.${{ env.Boost_Version_DOT }} ] && echo 'Skipped [done already]') || ./b2 install"
