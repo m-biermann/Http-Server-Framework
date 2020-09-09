@@ -126,12 +126,12 @@ jobs:
       id: vars
       shell: bash
       run: |
-        if [ ${{matrix.os}} = "windows-latest" ] then
+        if [ ${{matrix.os}} = "windows-latest" ]; then
           echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
           echo "::set-output name=GCC_PATH::$(where gcc)"
           echo "::set-output name=GXX_PATH::$(where g++)"
-        elif [ ${{matrix.os}} = "ubuntu-latest" ]
-          then echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
+        elif [ ${{matrix.os}} = "ubuntu-latest" ]; then
+          echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
           echo "::set-output name=GCC_PATH::$(which gcc)"
           echo "::set-output name=GXX_PATH::$(which g++)"
         fi
