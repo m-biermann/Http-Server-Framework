@@ -40,7 +40,7 @@ jobs:
     - name: Download Boost
       working-directory: ${{runner.workspace}}/boost
       shell: bash
-      run: "([ -f boost_${{ env.Boost_Version }}.tar.gz ] && echo 'Skipped [done already]') || wget https://dl.bintray.com/boostorg/release/${{ env.Boost_Version_DOT }}/source/boost_${{ env.Boost_Version }}.tar.gz"
+      run: "([ -f boost_${{ env.Boost_Version }}.tar.gz ] && echo 'Skipped [done already]') || curl -O https://dl.bintray.com/boostorg/release/${{ env.Boost_Version_DOT }}/source/boost_${{ env.Boost_Version }}.tar.gz"
 
     - name: Extract Boost
       working-directory: ${{runner.workspace}}/boost
@@ -129,5 +129,5 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: Libs
+        name: Libs-${{ matrix.os }}
         path: ${{runner.workspace}}/build_output

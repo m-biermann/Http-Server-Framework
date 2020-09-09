@@ -166,7 +166,7 @@
       <workItem from="1599470295198" duration="13483000" />
       <workItem from="1599489596317" duration="5856000" />
       <workItem from="1599643690034" duration="585000" />
-      <workItem from="1599644527309" duration="2738000" />
+      <workItem from="1599644527309" duration="3243000" />
     </task>
     <task id="LOCAL-00001" summary="Added Boost Include dirs as dependency to iocServer">
       <created>1599091964929</created>
@@ -196,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599651333361</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updated workflow to build on both ubuntu-latest and windows-latest">
+      <created>1599652029348</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1599652029348</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +241,8 @@
     <MESSAGE value="Improved github workflow; Created functional layout of httpServer" />
     <MESSAGE value="Removed HandlerStack; Added IHandler.Next(); Refactored IContextHandler" />
     <MESSAGE value="Fixed CMakeLists" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed CMakeLists" />
+    <MESSAGE value="Updated workflow to build on both ubuntu-latest and windows-latest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated workflow to build on both ubuntu-latest and windows-latest" />
   </component>
   <component name="WindowStateProjectService">
     <state x="147" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599084961122">
@@ -269,10 +277,10 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="172" y="1" key="SettingsEditor/0.0.1366.732@0.0.1366.732" timestamp="1599408887461" />
-    <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1599651346957">
+    <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1599652032064">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2/0.0.1366.732@0.0.1366.732" timestamp="1599651346957" />
+    <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2/0.0.1366.732@0.0.1366.732" timestamp="1599652032064" />
     <state x="456" y="280" width="443" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599150225924">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
