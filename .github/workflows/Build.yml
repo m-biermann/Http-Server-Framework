@@ -123,9 +123,9 @@ jobs:
       shell: bash
       run: |
         if [ ${{matrix.os}} = "windows-latest" ]
-          then echo "::set-output name=BOOST_DIR::C:\Boost"
+          then echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
         elif [ ${{matrix.os}} = "ubuntu-latest" ]
-          then echo "::set-output name=BOOST_DIR::${{runner.workspace}}/boost_out"
+          then echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
         fi
       
     - name: Boost Cache
