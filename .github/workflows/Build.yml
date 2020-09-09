@@ -51,7 +51,7 @@ jobs:
       run: echo "steps.cache.outputs.cache-hit ${{steps.cache.outputs.cache-hit}}"
 
     - name: Create Boost build dir
-      if: steps.cache.outputs.cache-hit != 'true' || ${{ github.event.inputs.${{ matrix.build_boost_input }} }} == 'true'
+      if: steps.cache.outputs.cache-hit != 'true' || github.event.inputs.${{ matrix.build_boost_input }} == 'true'
       working-directory: ${{runner.workspace}}
       run: mkdir -p boost
 
