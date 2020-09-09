@@ -21,6 +21,7 @@ jobs:
           - os: ubuntu-latest
             delimiter: /
     runs-on: ${{ matrix.os }}
+
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -115,6 +116,7 @@ jobs:
       env:
         CMAKE_INSTALL_PREFIX: ${{runner.workspace}}${{ matrix.delimiter }}build_output
         BOOST_ROOT: ${{runner.workspace}}${{ matrix.delimiter }}boost_out
+        Boost_DEBUG: ON
       # Note the current convention is to use the -S and -B options here to specify source 
       # and build directories, but this is only available with CMake 3.13 and higher.  
       # The CMake binaries on the Github Actions machines are (as of this writing) 3.12
