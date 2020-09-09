@@ -32,7 +32,7 @@ jobs:
           - os: ubuntu-latest
             path-delimiter: /
             script-file-type: sh
-            boost-out-location: ~/boost_out
+            boost-out-location: ${{runner.workspace}}/boost_out
     runs-on: ${{ matrix.os }}
 
     steps:
