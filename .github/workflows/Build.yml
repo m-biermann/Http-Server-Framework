@@ -148,9 +148,12 @@ jobs:
       run: echo "steps.cache.outputs.cache-hit ${{steps.cache.outputs.cache-hit}}"; exit 1
 
     - name: Create Build Environment
+      env:
+        CC: ${{ steps.vars.outputs.GCC_PATH }}
+        CXX: ${{ steps.vars.outputs.GXX_PATH }}
       # Some projects don't allow in-source building, so create a separate build directory
       # We'll use this as our working directory for all subsequent commands
-      run: cmake -E make_directory ${{runner.workspace}}${{ matrix.path-delimiter }}build
+      run: cmake -E make_directory ${{runner.workspace}}${{ matrix.path-delimiter }}build -DCMAKE_C_COMPILER=${{ steps.vars.outputs.GCC_PATH }} -DCMAKE_CXX_COMPILER=${{ steps.vars.outputs.GXX_PATH }}
 
     - name: Configure CMake
       # Use a bash shell so we can use the same syntax for environment variable
