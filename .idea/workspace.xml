@@ -46,29 +46,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="569d0b7b-aa02-447a-8f64-135c1081143a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/httpServer/src/handler/HandlerStack.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpServer/src/handler/HandlerStack.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpServer/src/session/HttpSession.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpServer/src/session/HttpSession.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpServer/src/session/HttpsSession.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpServer/src/session/HttpsSession.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpServer/src/session/launcher/HttpSessionLauncher.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpServer/src/session/launcher/HttpSessionLauncher.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpServer/src/session/launcher/HttpsSessionLauncher.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpServer/src/session/launcher/HttpsSessionLauncher.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/c++Backend.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Build.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpServer/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpServer/include/mabiphmo/httpServer/construction/IAppBuilder.h" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/include/mabiphmo/httpServer/construction/IAppBuilder.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpServer/include/mabiphmo/httpServer/handler/HandlerResult.h" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/include/mabiphmo/httpServer/handler/HandlerResult.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpServer/src/construction/AppBuilder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/src/construction/AppBuilder.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpServer/src/construction/AppBuilder.h" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/src/construction/AppBuilder.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpServer/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpServer/src/session/Session.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpServer/src/session/Session.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mabiphmoConfig.cmake.in" beforeDir="false" afterPath="$PROJECT_DIR$/mabiphmoConfig.cmake.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portServer/include/mabiphmo/portServer/construction/IAppBuilder.h" beforeDir="false" afterPath="$PROJECT_DIR$/portServer/include/mabiphmo/portServer/construction/IAppBuilder.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpServer/include/mabiphmo/httpServer/handler/IContextHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/include/mabiphmo/httpServer/handler/IContextHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpServer/include/mabiphmo/httpServer/handler/IHandler.h" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/include/mabiphmo/httpServer/handler/IHandler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpServer/include/mabiphmo/httpServer/handler/IRequestContext.h" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/include/mabiphmo/httpServer/handler/IRequestContext.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpServer/src/handler/HandlerStack.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/src/handler/HandlerStack.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/httpServer/src/handler/HandlerStack.h" beforeDir="false" afterPath="$PROJECT_DIR$/httpServer/src/handler/HandlerStack.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +168,9 @@
       <workItem from="1599163737816" duration="1465000" />
       <workItem from="1599408847578" duration="662000" />
       <workItem from="1599470295198" duration="13483000" />
-      <workItem from="1599489596317" duration="1436000" />
+      <workItem from="1599489596317" duration="5856000" />
+      <workItem from="1599643690034" duration="585000" />
+      <workItem from="1599644527309" duration="827000" />
     </task>
     <task id="LOCAL-00001" summary="Added Boost Include dirs as dependency to iocServer">
       <created>1599091964929</created>
@@ -194,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599091964929</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Improved github workflow; Created functional layout of httpServer">
+      <created>1599491312085</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599491312085</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +221,8 @@
       <path value="$PROJECT_DIR$/../../.." />
     </ignored-roots>
     <MESSAGE value="Added Boost Include dirs as dependency to iocServer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Boost Include dirs as dependency to iocServer" />
+    <MESSAGE value="Improved github workflow; Created functional layout of httpServer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved github workflow; Created functional layout of httpServer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="147" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599084961122">
@@ -264,10 +257,10 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="172" y="1" key="SettingsEditor/0.0.1366.732@0.0.1366.732" timestamp="1599408887461" />
-    <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1599091967211">
+    <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1599491314955">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2/0.0.1366.732@0.0.1366.732" timestamp="1599091967211" />
+    <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2/0.0.1366.732@0.0.1366.732" timestamp="1599491314955" />
     <state x="456" y="280" width="443" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599150225924">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
