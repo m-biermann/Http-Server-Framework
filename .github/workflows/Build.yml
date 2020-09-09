@@ -41,9 +41,9 @@ jobs:
       id: vars
       shell: bash
       run: |
-        if [${{matrix.os}} = "windows-latest"]
+        if [ ${{matrix.os}} = "windows-latest" ]
           then echo "::set-output name=BOOST_DIR::C:\Boost"
-        elif [${{matrix.os}} = "ubuntu-latest"]
+        elif [ ${{matrix.os}} = "ubuntu-latest" ]
           then echo "::set-output name=BOOST_DIR::${{runner.workspace}}/boost_out"
         fi
 
