@@ -11,6 +11,10 @@ if(DEFINED ENV{BOOST_ROOT})
     set(BOOST_ROOT $ENV{BOOST_ROOT})
 endif()
 
+if(DEFINED ENV{Boost_DEBUG})
+    set(Boost_DEBUG $ENV{Boost_DEBUG})
+endif()
+
 message(STATUS "CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
 
 set (Boost_USE_STATIC_LIBS OFF)
