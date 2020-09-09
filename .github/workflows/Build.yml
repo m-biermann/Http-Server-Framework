@@ -59,31 +59,31 @@ jobs:
         mkdir -p boost
 
     - name: Download Boost
-      if: steps.cache.outputs.cache-hit != 'true'
+      if: steps.cache.outputs.cache-hit != 'true' || (github.event.inputs.Build-Boost-WIN == 'true' && matrix.os == 'windows-latest') || (github.event.inputs.Build-Boost-UBU == 'true' && matrix.os == 'ubuntu-latest')
       working-directory: ${{runner.workspace}}${{ matrix.path-delimiter }}boost
       shell: bash
       run: "([ -f boost_${{ env.Boost_Version }}.tar.gz ] && echo 'Skipped [done already]') || curl -LO https://dl.bintray.com/boostorg/release/${{ env.Boost_Version_DOT }}/source/boost_${{ env.Boost_Version }}.tar.gz"
 
     - name: Extract Boost
-      if: steps.cache.outputs.cache-hit != 'true'
+      if: steps.cache.outputs.cache-hit != 'true' || (github.event.inputs.Build-Boost-WIN == 'true' && matrix.os == 'windows-latest') || (github.event.inputs.Build-Boost-UBU == 'true' && matrix.os == 'ubuntu-latest')
       working-directory: ${{runner.workspace}}${{ matrix.path-delimiter }}boost
       shell: bash
       run: "([ -d boost_${{ env.Boost_Version }} ] && echo 'Skipped [done already]') || tar xzvf boost_${{ env.Boost_Version }}.tar.gz"
 
     - name: Bootstrap Boost
-      if: steps.cache.outputs.cache-hit != 'true'
+      if: steps.cache.outputs.cache-hit != 'true' || (github.event.inputs.Build-Boost-WIN == 'true' && matrix.os == 'windows-latest') || (github.event.inputs.Build-Boost-UBU == 'true' && matrix.os == 'ubuntu-latest')
       working-directory: ${{runner.workspace}}${{ matrix.path-delimiter }}boost${{ matrix.path-delimiter }}boost_${{ env.Boost_Version }}
       shell: bash
       run: "([ -f b2 ] && echo 'Skipped [done already]') || ./bootstrap.${{ matrix.script-file-type }} --prefix=${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
 
     - name: Build Boost
-      if: steps.cache.outputs.cache-hit != 'true'
+      if: steps.cache.outputs.cache-hit != 'true' || (github.event.inputs.Build-Boost-WIN == 'true' && matrix.os == 'windows-latest') || (github.event.inputs.Build-Boost-UBU == 'true' && matrix.os == 'ubuntu-latest')
       working-directory: ${{runner.workspace}}${{ matrix.path-delimiter }}boost${{ matrix.path-delimiter }}boost_${{ env.Boost_Version }}
       shell: bash
       run: "([ -d stage ] && echo 'Skipped [done already]') || ./b2"
 
     - name: Install boost
-      if: steps.cache.outputs.cache-hit != 'true'
+      if: steps.cache.outputs.cache-hit != 'true' || (github.event.inputs.Build-Boost-WIN == 'true' && matrix.os == 'windows-latest') || (github.event.inputs.Build-Boost-UBU == 'true' && matrix.os == 'ubuntu-latest')
       working-directory: ${{runner.workspace}}${{ matrix.path-delimiter }}boost${{ matrix.path-delimiter }}boost_${{ env.Boost_Version }}
       shell: bash
       run: "./b2 install"
