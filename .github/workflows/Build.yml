@@ -15,6 +15,11 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
+        include:
+          - os: windows-latest
+            delimiter: \
+          - os: ubuntu-latest
+            delimiter: /
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout
@@ -25,7 +30,7 @@ jobs:
       id: cache
       with:
         key: Boost-${{ env.Boost_Version }}-${{ matrix.os }}
-        path: ${{runner.workspace}}/boost_out
+        path: ${{runner.workspace}}${{ matrix.delimiter }}boost_out
 
     - name: Boost already Installed
       if: steps.cache.outputs.cache-hit == 'true'
@@ -38,33 +43,33 @@ jobs:
 
     - name: Download Boost
       if: steps.cache.outputs.cache-hit != 'true'
-      working-directory: ${{runner.workspace}}/boost
+      working-directory: ${{runner.workspace}}${{ matrix.delimiter }}boost
       shell: bash
       run: "([ -f boost_${{ env.Boost_Version }}.tar.gz ] && echo 'Skipped [done already]') || curl -LO https://dl.bintray.com/boostorg/release/${{ env.Boost_Version_DOT }}/source/boost_${{ env.Boost_Version }}.tar.gz"
 
     - name: Extract Boost
       if: steps.cache.outputs.cache-hit != 'true'
-      working-directory: ${{runner.workspace}}/boost
+      working-directory: ${{runner.workspace}}${{ matrix.delimiter }}boost
       shell: bash
       run: "([ -d boost_${{ env.Boost_Version }} ] && echo 'Skipped [done already]') || tar xzvf boost_${{ env.Boost_Version }}.tar.gz"
 
     - name: Bootstrap Boost
       if: steps.cache.outputs.cache-hit != 'true'
-      working-directory: ${{runner.workspace}}/boost/boost_${{ env.Boost_Version }}
+      working-directory: ${{runner.workspace}}${{ matrix.delimiter }}boost${{ matrix.delimiter }}boost_${{ env.Boost_Version }}
       shell: bash
-      run: "([ -f b2 ] && echo 'Skipped [done already]') || ./bootstrap.sh --prefix=${{runner.workspace}}/boost_out"
+      run: "([ -f b2 ] && echo 'Skipped [done already]') || ./bootstrap.sh --prefix=${{runner.workspace}}${{ matrix.delimiter }}boost_out"
 
     - name: Build Boost
       if: steps.cache.outputs.cache-hit != 'true'
-      working-directory: ${{runner.workspace}}/boost/boost_${{ env.Boost_Version }}
+      working-directory: ${{runner.workspace}}${{ matrix.delimiter }}boost${{ matrix.delimiter }}boost_${{ env.Boost_Version }}
       shell: bash
       run: "([ -d stage ] && echo 'Skipped [done already]') || ./b2"
 
     - name: Install boost
       if: steps.cache.outputs.cache-hit != 'true'
-      working-directory: ${{runner.workspace}}/boost/boost_${{ env.Boost_Version }}
+      working-directory: ${{runner.workspace}}${{ matrix.delimiter }}boost${{ matrix.delimiter }}boost_${{ env.Boost_Version }}
       shell: bash
-      run: "([ -f /usr/local/lib/libboost_atomic.so.${{ env.Boost_Version_DOT }} ] && echo 'Skipped [done already]') || ./b2 install"
+      run: "./b2 install"
 
   build-libs:
     needs: build-boost
