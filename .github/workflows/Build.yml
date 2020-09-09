@@ -27,7 +27,7 @@ jobs:
         include:
           - os: windows-latest
             path-delimiter: \
-            script-file-type: bat
+            script-file-type: sh
           - os: ubuntu-latest
             path-delimiter: /
             script-file-type: sh
@@ -42,9 +42,9 @@ jobs:
       shell: bash
       run: |
         if [ ${{matrix.os}} = "windows-latest" ]
-          then echo "::set-output name=BOOST_DIR::C:\Boost"
+          then echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
         elif [ ${{matrix.os}} = "ubuntu-latest" ]
-          then echo "::set-output name=BOOST_DIR::${{runner.workspace}}/boost_out"
+          then echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
         fi
 
     - name: Cache
@@ -153,6 +153,8 @@ jobs:
         CMAKE_INSTALL_PREFIX: ${{runner.workspace}}${{ matrix.path-delimiter }}build_output
         BOOST_ROOT: ${{ steps.vars.outputs.BOOST_DIR }}
         Boost_DEBUG: ON
+        CXX: g++
+        CC: gcc
       # Note the current convention is to use the -S and -B options here to specify source 
       # and build directories, but this is only available with CMake 3.13 and higher.  
       # The CMake binaries on the Github Actions machines are (as of this writing) 3.12
