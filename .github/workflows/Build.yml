@@ -10,8 +10,11 @@ env:
 
 jobs:
   build-boost:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
     continue-on-error: true
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     env:
       Boost_Version_DOT: 1.74.0
       Boost_Version: 1_74_0
@@ -23,7 +26,7 @@ jobs:
       uses: actions/cache@v2.1.1
       id: cache
       with:
-        key: Boost-${{ env.Boost_Version }}
+        key: Boost-${{ env.Boost_Version }}-${{ matrix.os }}
         path: ${{runner.workspace}}/boost_out
 
     - name: Boost already Installed
@@ -65,7 +68,10 @@ jobs:
     # well on Windows or Mac.  You can convert this to a matrix build if you need
     # cross-platform coverage.
     # See: https://docs.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow#configuring-a-build-matrix
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
 
     steps:
     - name: Checkout
@@ -75,7 +81,7 @@ jobs:
       uses: actions/cache@v2.1.1
       id: cache
       with:
-        key: Boost-${{ env.Boost_Version }}
+        key: Boost-${{ env.Boost_Version }}-${{ matrix.os }}
         path: ${{runner.workspace}}/boost_out
     
     - name: Boost not found!
