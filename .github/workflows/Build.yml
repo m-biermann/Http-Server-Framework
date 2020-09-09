@@ -7,6 +7,8 @@ on:
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
+  Boost_Version_DOT: 1.74.0
+  Boost_Version: 1_74_0
 
 jobs:
   build-boost:
@@ -15,9 +17,6 @@ jobs:
         os: [ubuntu-latest, windows-latest]
     continue-on-error: true
     runs-on: ${{ matrix.os }}
-    env:
-      Boost_Version_DOT: 1.74.0
-      Boost_Version: 1_74_0
     steps:
     - name: Checkout
       uses: actions/checkout@v2
