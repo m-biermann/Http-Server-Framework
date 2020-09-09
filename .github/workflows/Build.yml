@@ -41,10 +41,14 @@ jobs:
       id: vars
       shell: bash
       run: |
-        if [ ${{matrix.os}} = "windows-latest" ]
-          then echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
+        if [ ${{matrix.os}} = "windows-latest" ] then
+          echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
+          echo "::set-output name=GCC_PATH::$(where gcc)"
+          echo "::set-output name=G++_PATH::$(where g++)"
         elif [ ${{matrix.os}} = "ubuntu-latest" ]
           then echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
+          echo "::set-output name=GCC_PATH::$(which gcc)"
+          echo "::set-output name=G++_PATH::$(which g++)"
         fi
 
     - name: Cache
@@ -153,10 +157,12 @@ jobs:
         CMAKE_INSTALL_PREFIX: ${{runner.workspace}}${{ matrix.path-delimiter }}build_output
         BOOST_ROOT: ${{ steps.vars.outputs.BOOST_DIR }}
         Boost_DEBUG: ON
+        CC: ${{ steps.vars.outputs.GCC_PATH }}
+        CXX: ${{ steps.vars.outputs.G++_PATH }}
       # Note the current convention is to use the -S and -B options here to specify source 
       # and build directories, but this is only available with CMake 3.13 and higher.  
       # The CMake binaries on the Github Actions machines are (as of this writing) 3.12
-      run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++
+      run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_C_COMPILER=${{ steps.vars.outputs.GCC_PATH }} -DCMAKE_CXX_COMPILER=${{ steps.vars.outputs.G++_PATH }}
 
     - name: Build
       working-directory: ${{runner.workspace}}${{ matrix.path-delimiter }}build
