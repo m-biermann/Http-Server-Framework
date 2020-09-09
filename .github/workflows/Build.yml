@@ -42,7 +42,8 @@ jobs:
       shell: bash
       run: |
         if [ ${{matrix.os}} = "windows-latest" ]; then
-          echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
+          boost_loc=${{runner.workspace}}${{ matrix.path-delimiter }}boost_out
+          echo "::set-output name=BOOST_DIR::${boost_loc//\\//}"
           gcc_loc=$(where gcc)
           echo "::set-output name=GCC_PATH::${gcc_loc//\\//}"
           gxx_loc=$(where g++)
@@ -129,7 +130,8 @@ jobs:
       shell: bash
       run: |
         if [ ${{matrix.os}} = "windows-latest" ]; then
-          echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
+          boost_loc=${{runner.workspace}}${{ matrix.path-delimiter }}boost_out
+          echo "::set-output name=BOOST_DIR::${boost_loc//\\//}"
           gcc_loc=$(where gcc)
           echo "::set-output name=GCC_PATH::${gcc_loc//\\//}"
           gxx_loc=$(where g++)
