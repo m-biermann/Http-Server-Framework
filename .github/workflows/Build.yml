@@ -43,7 +43,9 @@ jobs:
       run: |
         if [ ${{matrix.os}} = "windows-latest" ]; then
           boost_loc=${{runner.workspace}}${{ matrix.path-delimiter }}boost_out
+          echo "boost_loc pre: $boost_loc"
           boost_loc=${boost_loc//\\//}
+          echo "boost_loc post: $boost_loc"
           gcc_loc=$(where gcc)
           gcc_loc=${gcc_loc//\\//}
           gxx_loc=$(where g++)
