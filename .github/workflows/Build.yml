@@ -43,16 +43,22 @@ jobs:
       run: |
         if [ ${{matrix.os}} = "windows-latest" ]; then
           boost_loc=${{runner.workspace}}${{ matrix.path-delimiter }}boost_out
-          echo "::set-output name=BOOST_DIR::${boost_loc//\\//}"
+          boost_loc=${boost_loc//\\//}
           gcc_loc=$(where gcc)
-          echo "::set-output name=GCC_PATH::${gcc_loc//\\//}"
+          gcc_loc=${gcc_loc//\\//}
           gxx_loc=$(where g++)
-          echo "::set-output name=GXX_PATH::${gxx_loc//\\//}"
+          gxx_loc=${gxx_loc//\\//}
         elif [ ${{matrix.os}} = "ubuntu-latest" ]; then
-          echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
-          echo "::set-output name=GCC_PATH::$(which gcc)"
-          echo "::set-output name=GXX_PATH::$(which g++)"
+          boost_loc=${{runner.workspace}}${{ matrix.path-delimiter }}boost_out
+          gcc_loc=$(which gcc)
+          gxx_loc=$(which g++)
         fi
+        echo "boost_loc: $boost_loc"
+        echo "::set-output name=BOOST_DIR::$boost_loc"
+        echo "gcc_loc: $gcc_loc"
+        echo "::set-output name=GCC_PATH::$gcc_loc"
+        echo "gxx_loc: $gxx_loc"
+        echo "::set-output name=GXX_PATH::$gxx_loc"
 
     - name: Cache
       uses: actions/cache@v2.1.1
@@ -131,16 +137,22 @@ jobs:
       run: |
         if [ ${{matrix.os}} = "windows-latest" ]; then
           boost_loc=${{runner.workspace}}${{ matrix.path-delimiter }}boost_out
-          echo "::set-output name=BOOST_DIR::${boost_loc//\\//}"
+          boost_loc=${boost_loc//\\//}
           gcc_loc=$(where gcc)
-          echo "::set-output name=GCC_PATH::${gcc_loc//\\//}"
+          gcc_loc=${gcc_loc//\\//}
           gxx_loc=$(where g++)
-          echo "::set-output name=GXX_PATH::${gxx_loc//\\//}"
+          gxx_loc=${gxx_loc//\\//}
         elif [ ${{matrix.os}} = "ubuntu-latest" ]; then
-          echo "::set-output name=BOOST_DIR::${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
-          echo "::set-output name=GCC_PATH::$(which gcc)"
-          echo "::set-output name=GXX_PATH::$(which g++)"
+          boost_loc=${{runner.workspace}}${{ matrix.path-delimiter }}boost_out
+          gcc_loc=$(which gcc)
+          gxx_loc=$(which g++)
         fi
+        echo "boost_loc: $boost_loc"
+        echo "::set-output name=BOOST_DIR::$boost_loc"
+        echo "gcc_loc: $gcc_loc"
+        echo "::set-output name=GCC_PATH::$gcc_loc"
+        echo "gxx_loc: $gxx_loc"
+        echo "::set-output name=GXX_PATH::$gxx_loc"
       
     - name: Boost Cache
       uses: actions/cache@v2.1.1
