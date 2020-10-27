@@ -45,8 +45,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="569d0b7b-aa02-447a-8f64-135c1081143a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/Build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Build.yml" afterDir="false" />
+    <list default="true" id="569d0b7b-aa02-447a-8f64-135c1081143a" name="Default Changelist" comment="Syntax?">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Admin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ioc/include/mabiphmo/ioc/Container.h" beforeDir="false" afterPath="$PROJECT_DIR$/ioc/include/mabiphmo/ioc/Container.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ioc/test/container/ArgTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ioc/test/container/ArgTests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ioc/test/container/ClassFactoryTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ioc/test/container/ClassFactoryTests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ioc/test/container/SingletonFactoryTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ioc/test/container/SingletonFactoryTests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ioc/test/container/SingletonInstanceTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ioc/test/container/SingletonInstanceTests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ioc/test/container/argStructs.h" beforeDir="false" afterPath="$PROJECT_DIR$/ioc/test/container/argStructs.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,13 +77,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
-  <component name="RunManager" selected="CMake Application.httpServer">
+  <component name="RunManager" selected="Boost.Test.iocTests">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="httpServerTests" type="CMakeBoostTestRunConfigurationType" factoryName="Boost Test" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mabiphmo" TARGET_NAME="httpServerTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="mabiphmo" RUN_TARGET_NAME="httpServerTests" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -98,11 +112,6 @@
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="httpServer" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="mabiphmo" TARGET_NAME="httpServer" CONFIG_NAME="Debug">
@@ -134,8 +143,8 @@
     </configuration>
     <list>
       <item itemvalue="Boost.Test.httpServerTests" />
-      <item itemvalue="Boost.Test.iocServerTests" />
       <item itemvalue="Boost.Test.iocTests" />
+      <item itemvalue="Boost.Test.iocServerTests" />
       <item itemvalue="Boost.Test.portServerTests" />
       <item itemvalue="CMake Application.httpServer" />
       <item itemvalue="CMake Application.iocServer" />
@@ -167,6 +176,15 @@
       <workItem from="1599643690034" duration="585000" />
       <workItem from="1599644527309" duration="11647000" />
       <workItem from="1599671544548" duration="63000" />
+      <workItem from="1599675739561" duration="829000" />
+      <workItem from="1599760051470" duration="970000" />
+      <workItem from="1599761467665" duration="5213000" />
+      <workItem from="1599775742679" duration="184000" />
+      <workItem from="1599862856841" duration="1287000" />
+      <workItem from="1602884986712" duration="124000" />
+      <workItem from="1602885153740" duration="5880000" />
+      <workItem from="1603563401707" duration="12021000" />
+      <workItem from="1603826016707" duration="7064000" />
     </task>
     <task id="LOCAL-00001" summary="Added Boost Include dirs as dependency to iocServer">
       <created>1599091964929</created>
@@ -360,6 +378,10 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="147" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.732@0.0.1366.732" timestamp="1599084961122" />
+    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1603828098646">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603828098646" />
     <state x="100" y="100" width="1166" height="532" key="DiffContextDialog" timestamp="1599654929323">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
@@ -384,21 +406,31 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state width="1320" height="172" key="GridCell.Tab.0.right/0.0.1366.732@0.0.1366.732" timestamp="1599409514597" />
-    <state x="172" y="1" key="SettingsEditor" timestamp="1599408887461">
-      <screen x="0" y="0" width="1366" height="732" />
+    <state x="623" y="147" key="SettingsEditor" timestamp="1603828168362">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="172" y="1" key="SettingsEditor/0.0.1366.732@0.0.1366.732" timestamp="1599408887461" />
+    <state x="623" y="147" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603828168362" />
     <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1599665243305">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2/0.0.1366.732@0.0.1366.732" timestamp="1599665243305" />
-    <state x="456" y="280" width="443" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599150225924">
-      <screen x="0" y="0" width="1366" height="732" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1599675739582">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599675739582" />
+    <state x="641" y="398" width="443" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602885039441">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="456" y="280" width="443" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.732@0.0.1366.732" timestamp="1599150225924" />
+    <state x="641" y="398" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602885039441" />
     <state x="377" y="0" width="621" height="732" key="find.popup" timestamp="1599650071942">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="377" y="0" width="621" height="732" key="find.popup/0.0.1366.732@0.0.1366.732" timestamp="1599650071942" />
+    <state x="685" y="304" width="550" height="427" key="refactoring.ChangeSignatureDialog" timestamp="1602888968830">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="685" y="304" width="550" height="427" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602888968830" />
   </component>
 </project>

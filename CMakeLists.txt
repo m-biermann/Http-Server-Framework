@@ -11,12 +11,14 @@ if(DEFINED ENV{BOOST_ROOT})
     set(BOOST_ROOT $ENV{BOOST_ROOT})
 endif()
 
+set(BOOST_ROOT /cygdrive/c/Boost)
+
 if(DEFINED ENV{Boost_DEBUG})
     set(Boost_DEBUG $ENV{Boost_DEBUG})
 endif()
 
 message(STATUS "CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
-
+set(Boost_DEBUG ON)
 find_package(Boost REQUIRED COMPONENTS unit_test_framework)
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
