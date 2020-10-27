@@ -47,14 +47,8 @@
   <component name="ChangeListManager">
     <list default="true" id="569d0b7b-aa02-447a-8f64-135c1081143a" name="Default Changelist" comment="Syntax?">
       <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Admin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/Build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/Build.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ioc/include/mabiphmo/ioc/Container.h" beforeDir="false" afterPath="$PROJECT_DIR$/ioc/include/mabiphmo/ioc/Container.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ioc/test/container/ArgTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ioc/test/container/ArgTests.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ioc/test/container/ClassFactoryTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ioc/test/container/ClassFactoryTests.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ioc/test/container/SingletonFactoryTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ioc/test/container/SingletonFactoryTests.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ioc/test/container/SingletonInstanceTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ioc/test/container/SingletonInstanceTests.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ioc/test/container/argStructs.h" beforeDir="false" afterPath="$PROJECT_DIR$/ioc/test/container/argStructs.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +178,7 @@
       <workItem from="1602884986712" duration="124000" />
       <workItem from="1602885153740" duration="5880000" />
       <workItem from="1603563401707" duration="12021000" />
-      <workItem from="1603826016707" duration="7064000" />
+      <workItem from="1603826016707" duration="8080000" />
     </task>
     <task id="LOCAL-00001" summary="Added Boost Include dirs as dependency to iocServer">
       <created>1599091964929</created>
@@ -319,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599665241446</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="refactored ioc container">
+      <created>1603833399498</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1603833399498</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,17 +372,18 @@
     <MESSAGE value="dynamically choose script file type by os" />
     <MESSAGE value="inputs to choose whether to build boost even if found" />
     <MESSAGE value="Syntax?" />
-    <option name="LAST_COMMIT_MESSAGE" value="Syntax?" />
+    <MESSAGE value="refactored ioc container" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored ioc container" />
   </component>
   <component name="WindowStateProjectService">
     <state x="147" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599084961122">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="147" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.732@0.0.1366.732" timestamp="1599084961122" />
-    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1603828098646">
+    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1603833397498">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603828098646" />
+    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603833397498" />
     <state x="100" y="100" width="1166" height="532" key="DiffContextDialog" timestamp="1599654929323">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
@@ -411,10 +413,11 @@
     </state>
     <state x="172" y="1" key="SettingsEditor/0.0.1366.732@0.0.1366.732" timestamp="1599408887461" />
     <state x="623" y="147" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603828168362" />
-    <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1599665243305">
-      <screen x="0" y="0" width="1366" height="732" />
+    <state x="391" y="145" width="800" height="527" key="Vcs.Push.Dialog.v2" timestamp="1603833416982">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="278" y="102" width="800" height="527" key="Vcs.Push.Dialog.v2/0.0.1366.732@0.0.1366.732" timestamp="1599665243305" />
+    <state x="391" y="145" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603833416982" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1599675739582">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
