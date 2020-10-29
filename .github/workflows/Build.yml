@@ -27,7 +27,7 @@ jobs:
         include:
           - os: windows-latest
             path-delimiter: \
-            script-file-type: sh
+            script-file-type: bat
           - os: ubuntu-latest
             path-delimiter: /
             script-file-type: sh
@@ -44,7 +44,7 @@ jobs:
         if [ ${{matrix.os}} = "windows-latest" ]; then
           boost_loc="${{runner.workspace}}${{ matrix.path-delimiter }}boost_out"
           echo "boost_loc pre: $boost_loc"
-          boost_loc="${boost_loc//\\//}"
+          boost_loc="C:/Boost"
           echo "boost_loc post: $boost_loc"
           gcc_loc="$(where gcc)"
           gcc_loc="${gcc_loc//\\//}"
